@@ -1,0 +1,54 @@
+<p>directives works!</p>
+<h2 *ngIf="showThisMessage; then showThenMessageBlock else showElseMessage"></h2>
+
+<ng-template #showThenMessageBlock>
+    <h2>if statement is Then block</h2>
+</ng-template>
+
+<ng-template #showElseMessage>
+    <h2>if statement is false</h2>
+</ng-template>
+----------------------
+
+<div *ngFor="let hero of heros"> 
+    <h3>{{hero}}</h3>
+</div>
+<table>
+    <th>Numbers</th>
+    <th>Names</th>
+    <th>First Ex</th>
+    <th>Last Ex</th>
+    <th>Even</th>
+    <th>odd</th>
+    <tr *ngFor="let hero of heros; index as i; first as f; last as l; even as e; odd as o ">
+        <td>{{i}}</td>
+        <td>{{hero}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+        <td>{{e}}</td>
+        <td>{{o}}</td>
+
+    </tr>
+</table>
+------------------------------------
+<h1>ngSwitch</h1>
+
+<div [ngSwitch]="pickHero">
+    <div *ngSwitchCase="'pavanKalyan'"> you picked Power star</div>
+    <div *ngSwitchCase="'Chiru'"> you picked Mega star</div>
+    <div *ngSwitchCase="'ramcharan'">  you picked mega power star</div>
+    <div *ngSwitchCase="'maheshbabu'"> you picked super star</div>
+    <div *ngSwitchCase="'nag'"> you picked handsome star</div>
+    <div *ngSwitchDefault> pick stylish star</div>
+</div>
+------------------------------------
+<h1>ngStyle</h1>
+
+<p [ngStyle]="{'color':colorName, 'background-color':bgColorName}"> you picked Power star</p>
+------------------------------------
+
+<h1>ngClass</h1>
+
+
+<p [ngClass]="className">you picked Power star</p>
+
