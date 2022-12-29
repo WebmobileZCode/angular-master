@@ -1,0 +1,26 @@
+<p-card header="Login" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
+   
+<form [formGroup]="loginReactiveForm" (ngSubmit)="onSubmit()">
+    <div class="grid">
+        <div class="col-12 form-group">
+            <label for="username">Username:</label>
+            <input type="text"
+            pInputText
+            class="inputfield w-full"
+            formControlName="username" 
+            id="username">
+         <p *ngIf="!loginReactiveForm.get('username')?.valid && loginReactiveForm.get('username')?.touched" class="redColor">Username is required</p>
+        </div>
+        <div class="col-12 form-group">
+            <label for="email">Email:</label>
+            <input type="text"
+            pInputText
+            class="inputfield w-full" 
+            formControlName="email"
+            id="username">
+        </div>
+        <p *ngIf="!loginReactiveForm.get('email')?.valid && loginReactiveForm.get('email')?.touched" class="redColor">Email is required</p>
+    </div>
+    <button pButton label="submit"></button>
+</form>
+</p-card>

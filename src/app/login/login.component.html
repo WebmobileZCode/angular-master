@@ -1,0 +1,53 @@
+<div class="grid classCenter">
+<p-card header="Login" [style]="{'width': '25rem', 'margin-bottom': '2em'}"> 
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="grid">
+        <div class="col-12">
+            <label for="fname">Username</label>
+            <input type="text" 
+            pInputText 
+            [(ngModel)]="username" 
+            class="inputfield w-full" 
+            name="username"
+            required
+            #usenameField="ngModel"/>
+            <div class="redColor" *ngIf="!usenameField.valid && usenameField.touched">Username is required</div>
+        </div>
+        <div class="col-12 mb-2">    
+            <label for="fname">Email</label>
+            <input type="email" 
+            [(ngModel)]="email" 
+            pInputText class="inputfield w-full" 
+            name="email"
+            required
+            email
+            #emailField="ngModel">
+            <div class="redColor" *ngIf="!emailField.valid && emailField.touched">Email is required</div>
+            <div class="col-12 mb-2"> 
+            <button pButton label="Login" [disabled]="!loginForm.valid"></button>
+            </div>
+        </div>
+    
+        <div class="grid">
+            <div class="col-6">
+                Not a Member <a href="/register">Register</a>
+            </div>
+            <div class="col-6">
+                <a href="/forgot-password">Forgot Password</a>
+            </div>
+        </div>
+   </div>
+</form>
+<p>username: {{username}}</p>
+<p>email: {{email}}</p>
+
+</p-card>
+</div>
+
+
+<div>Reactvive forms <a href="/reactveform">Reactive Form Example</a></div>
+<a href="/directives">Directives Example</a>
+
+<div appSrijaDirective>
+    custom directive
+</div>
